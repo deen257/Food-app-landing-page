@@ -1,38 +1,217 @@
-.App {
+.hero-bng{
+  background: #00BFFF url(../public/bg.jpeg);
+  background-repeat: no-repeat;
   text-align: center;
+  background-position: cover;
+  background-size: cover;
+  padding-bottom: 4em;
+
+
+}
+.top{
+  padding-top: .5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-bng a {
+  text-decoration: none;
+  color: rgb(12, 12, 12);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: lowercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+section{
+  margin: 0 1em;
+}
+h1{
+  font-size: 2.5rem;
+  margin: 2em 0 1.2em;
+}
+h1 span{
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  position: relative;
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 span::before{
+  content: '';
+  position: absolute;
+  width: 3em;
+  background: #00BFFF;
+  height: .4em;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -0.3em;
+}
+
+.hero-bng p{
+  font-weight: bold;
+  margin:0 1em 3em;
+}
+.form-container {
+  background-color: white;
+  margin: 2em -1em 0;
+  padding: 2em;
+}
+
+label{
+  color: aqua;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+input[type=text]{
+  border: 1px solid #707070;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.form-container p{
+  color: gray;
+  margin-bottom: 1.5em;
+  font-weight: normal;
+  font-size: .9em;
+  margin-top: 0.3em;
+}
+
+.form-container button{
+  background: #f89104;
+  border: none;
   color: white;
+  width: 100%;
+  padding: 1em 0;
+  border-radius: .5em;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.btn{
+  background: #f89104;
+  border: none;
+  color: white;
+  padding:1em 0 ;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-container button:hover{
+  background-color: rgb(216, 126, 1)
+}
+.authentic{
+  margin: 0;
+}
+.right-col{
+  text-align: center;
+  margin: 3em 1em;
+}
+h2{
+  text-transform: uppercase;
+  position: relative;
+}
+h2::before{
+  content: '';
+  position: absolute;
+  width: 8em;
+  background: #00BFFF;
+  height: .4em;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -0.3em;
+}
+img{
+  width: 100%;
+}
+p{
+  line-height: 2em;
+}
+.overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1;
+  place-content: center;
+  color: white;
+  display: grid;
+}
+
+@media (min-width: 730px) {
+
+  section{
+    margin: 0 4em;
   }
-  to {
-    transform: rotate(360deg);
+  .form-container{
+    margin: 2em -4em 0;
   }
+}
+
+@media (min-width: 930px) {
+
+ .hero-bng{
+  text-align: left;
+}
+.hero-bng p{
+  margin: 0 0 3em;
+}
+.hero-bng section{
+  width: 65%;
+}
+.form-container{
+  margin: 2em 0 0 ;
+  padding: 2em;
+  border-radius: .5em;
+  box-shadow: 10px 10px 10px rgba(0,0,0,00.3);
+}
+form{
+  display: flex;
+}
+.form-left{
+  width: 70%;
+}
+label{
+  margin: 0;
+}
+.form-container button{
+  height: fit-content;
+  font-size: 1.1em;
+  margin-left: 1em;
+  margin-top: 1.5em;
+  padding: 0.7em 0;
+  width: 30%;
+}
+
+.hero-bng p{
+  margin-bottom: 0;
+}
+
+section.authentic{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas: 'food content';
+}
+.right-col{
+  grid-area: content;
+  padding: 0 10%;
+  text-align: left;
+  align-self: center;
+}
+}
+
+.top{
+  animation:  fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from{opacity: 0;
+    transform: translateY(-2em);
+  }
+  to{opacity: 1;
+    transform: translateY(0);
+  }
+
 }

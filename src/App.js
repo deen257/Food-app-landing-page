@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Landing from './Landing';
+import Next from './Next';
+import React from 'react'
 
 function App() {
+  const [search, setSearch] = React.useState(false)
+  const submitHander = (e) => {
+    e.preventDefault()
+    setSearch(true)
+  }
+  const handleCLick = () => {
+    setSearch(false)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {search ? (
+        <div className='overlay'>
+          <h3>searching now...</h3>
+          <button className='btn' onClick={handleCLick}>Close</button>
+        </div>
+      ) : null}
+      <Landing submitHander={submitHander}/>
+      <Next />
+    </>
+  )
 }
 
 export default App;
